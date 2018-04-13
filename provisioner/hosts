@@ -1,0 +1,66 @@
+[vagrant]
+192.168.33.12
+
+[vagrant:vars]
+vm=1
+deploy_environment=vagrant
+project_namespace={{ project_name }}-{{ deploy_environment }}
+user=vagrant
+project_path=/home/vagrant/visitors-entry-system-web
+venv_path=/home/vagrant/venv
+django_requirements_file=requirements/development.txt
+django_settings="settings.development"
+use_letsencrypt=False
+pg_db=visitors_entry_system
+pg_user=vagrant
+pg_password=vagrant
+domain_name=vagrant.visitors_entry_system.com
+
+[dev]
+dev.visitors_entry_system.com
+
+[dev:vars]
+vm=0
+deploy_environment=dev
+user=ubuntu
+project_namespace={{ project_name }}-{{ deploy_environment }}
+project_path=/home/ubuntu/{{ deploy_environment }}/visitors-entry-system-web
+venv_path=/home/ubuntu/{{ deploy_environment }}/{{ project_name }}-venv
+use_letsencrypt=False
+letsencrypt_email=backend+visitors-entry-system@fueled.com
+django_requirements_file=requirements.txt
+django_settings="settings.production"
+domain_name=dev.visitors_entry_system.com
+
+
+[qa]
+qa.visitors_entry_system.com
+
+[qa:vars]
+vm=0
+deploy_environment=qa
+user=ubuntu
+project_namespace={{ project_name }}-{{ deploy_environment }}
+project_path=/home/ubuntu/{{ deploy_environment }}/visitors-entry-system-web
+venv_path=/home/ubuntu/{{ deploy_environment }}/{{ project_name }}-venv
+use_letsencrypt=False
+letsencrypt_email=backend+visitors-entry-system@fueled.com
+django_requirements_file=requirements.txt
+django_settings="settings.production"
+domain_name=qa.visitors_entry_system.com
+
+[production]
+visitors_entry_system.com
+
+[production:vars]
+vm=0
+deploy_environment=prod
+user=ubuntu
+project_namespace={{ project_name }}-{{ deploy_environment }}
+project_path=/home/ubuntu/{{ deploy_environment }}/visitors-entry-system-web
+venv_path=/home/ubuntu/{{ deploy_environment }}/{{ project_name }}-venv
+use_letsencrypt=False
+letsencrypt_email=backend+visitors-entry-system@fueled.com
+django_requirements_file=requirements.txt
+django_settings="settings.production"
+domain_name=visitors_entry_system.com
