@@ -1,6 +1,9 @@
 Visitors Entry System
 ==============================
 
+[![Build Status](https://travis-ci.org/romilchaudhary/visitors-entry-system-web.svg?branch=master)](https://travis-ci.org/romilchaudhary/visitors-entry-system-web)
+
+
 __Version:__ 0.0.0
 
 entry exit system for visitors
