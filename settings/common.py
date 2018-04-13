@@ -28,7 +28,7 @@ INSTALLED_APPS = (
 
     'visitors_entry_system.base',
     'visitors_entry_system.users',
-
+    'visitors_entry_system.visitor_records',
     'rest_framework',  # http://www.django-rest-framework.org/
     'rest_framework_swagger',
     'versatileimagefield',  # https://github.com/WGBH/django-versatileimagefield/
